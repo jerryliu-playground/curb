@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /** Fonts bundled with the renderer (ADR 0011). Brand kits choose from these only. */
-export const BUNDLED_FONTS = ["Inter"] as const;
+export const BUNDLED_FONTS = ["Inter", "Cormorant Garamond", "Playfair Display"] as const;
 
 const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/, "Use a 6-digit hex colour like #1a2b3c");
 

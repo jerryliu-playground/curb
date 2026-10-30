@@ -80,18 +80,32 @@ for (const [name, template] of Object.entries(TEMPLATES)) {
       caption: "c",
       hashtags: ["#a", "#b", "#c", "#d", "#e"],
     };
-    const slides = await renderCarousel(renderer, {
-      template,
-      listing,
-      plan,
-      analyses: sample.analyses,
-      brandKit,
-      photoDir: sample.dir,
-    });
-    const problems = slides.flatMap((s, i) =>
-      s.overflow.map((o) => `slide ${i + 1} (${plan.slides[i]?.type}): ${o}`),
-    );
-    expect(problems).toEqual([]);
+    // The same copy in the other layout variants: no-photo stats and cta, two-photo gallery.
+    const variants: CarouselPlan = {
+      ...plan,
+      slides: plan.slides.map((s) => {
+        if (s.type === "stats" || s.type === "cta") return { ...s, photo: null };
+        if (s.type === "gallery") return { ...s, photos: [f(3), f(4)] };
+        return s;
+      }),
+    };
+    for (const [label, p] of [
+      ["photos", plan],
+      ["variants", variants],
+    ] as const) {
+      const slides = await renderCarousel(renderer, {
+        template,
+        listing,
+        plan: p,
+        analyses: sample.analyses,
+        brandKit,
+        photoDir: sample.dir,
+      });
+      const problems = slides.flatMap((s, i) =>
+        s.overflow.map((o) => `${label} slide ${i + 1} (${p.slides[i]?.type}): ${o}`),
+      );
+      expect(problems).toEqual([]);
+    }
   });
 
   test(`${name}: overflow is detected, not hidden`, async () => {
