@@ -1,0 +1,267 @@
+:root {
+  --bg: #f6f5f2;
+  --panel: #ffffff;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --line: #e2e0db;
+  --accent: #14213d;
+  --warn: #b3261e;
+  --ok: #2e7d32;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
+}
+h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+h3 {
+  font-size: 0.95rem;
+  margin: 1.25rem 0 0.5rem;
+}
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: var(--warn);
+}
+button,
+.button {
+  font: inherit;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+input,
+textarea,
+select {
+  font: inherit;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+select {
+  width: auto;
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+main {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.start {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+.sample {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+  padding: 0.9rem;
+}
+.sample.selected,
+.thumb.selected,
+.photo.selected {
+  outline: 3px solid var(--accent);
+  outline-offset: -1px;
+}
+.field {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+.field.inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.count {
+  float: right;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+.check {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+.check input {
+  width: auto;
+}
+
+.log {
+  color: var(--muted);
+}
+.review-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.strip {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0 0 0.75rem;
+  margin: 0 0 1rem;
+  list-style: none;
+}
+.thumb {
+  padding: 0.25rem;
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  width: 112px;
+}
+.thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+.thumb.warn {
+  border-color: var(--warn);
+  border-width: 2px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 1.25rem;
+  align-items: start;
+}
+.editor {
+  display: grid;
+  grid-template-columns: minmax(0, 432px) minmax(0, 1fr);
+  gap: 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.preview {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  display: block;
+}
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 0.4rem;
+}
+.photo {
+  padding: 0;
+  overflow: hidden;
+}
+.photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.sidebar {
+  display: grid;
+  gap: 1rem;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.panel.approved {
+  border-color: var(--ok);
+}
+.badge {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 0 0.4em;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
+  background: var(--muted);
+}
+.badge.warn {
+  background: var(--warn);
+}
+.flags {
+  padding-left: 1.1rem;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+.round {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1100px) {
+  .workspace,
+  .editor {
+    grid-template-columns: 1fr;
+  }
+}

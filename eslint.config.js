@@ -77,6 +77,7 @@ export default defineConfig(
     "samples/",
     "test-results/",
     "playwright-report/",
+    ".claude/worktrees/",
   ]),
   js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
