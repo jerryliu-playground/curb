@@ -17,25 +17,38 @@ Every model output is validated against a zod schema from `@curb/shared` (ADR 00
 
 ## Packages
 
-| Package           | Role                                                                  | May depend on                                |
-| ----------------- | --------------------------------------------------------------------- | -------------------------------------------- |
-| `@curb/shared`    | Types, zod schemas, compliance word list                              | — (leaf)                                     |
-| `@curb/templates` | Pure React slide components, brand-kit tokens, render-to-HTML helper  | `shared`                                     |
-| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement                       | `shared`                                     |
-| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface                 | `shared`, `templates`, `renderer`            |
-| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config | all packages, `@anthropic-ai/sdk` (Phase 1)  |
-| `@curb/web`       | React + Vite review UI                                                | `shared` (talks to the server over HTTP/SSE) |
+| Package           | Role                                                                                     | May depend on                                |
+| ----------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `@curb/shared`    | Types, zod schemas, compliance word list                                                 | — (leaf)                                     |
+| `@curb/templates` | Pure React slide components, brand-kit tokens, render-to-HTML helper                     | `shared`                                     |
+| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement, `renderCarousel`                        | `shared`, `templates`                        |
+| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface; mocks in `@curb/pipeline/testing` | `shared` (render is injected)                |
+| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config                    | all packages, `@anthropic-ai/sdk` (Phase 1)  |
+| `@curb/web`       | React + Vite review UI                                                                   | `shared` (talks to the server over HTTP/SSE) |
 
 ```
-            web ──HTTP/SSE──▶ server
-                               │
-                            pipeline ──▶ renderer
-                               │    └──▶ templates
-                               ▼
-                             shared ◀── (everyone)
+web ──HTTP/SSE──▶ server ──▶ pipeline ──▶ shared
+                    │                        ▲
+                    └──────▶ renderer ──▶ templates
 ```
 
 Internal packages export TypeScript source directly (`./src/index.ts`); there is no build step between them (ADR 0002).
+
+The pipeline doesn't import the renderer: `generateCarousel` takes a `render` function, which the server (or CLI) wires to `renderCarousel`. That keeps pipeline tests free of Playwright.
+
+## How a run works (Phase 1)
+
+`pnpm generate --listing samples/01 [--mock]` (`apps/server/src/cli/generate.ts`):
+
+1. Reads `listing.json` (validated with `ListingSchema`) and the photos.
+2. Downscales photos with sharp to `BUDGET.maxImageEdgePx` for the model (ADR 0012).
+3. **Photo analysis**: one request per photo, `prompts/photo-analysis.v1.md`, cached in `.cache/photo-analysis/` by image hash + prompt version + model.
+4. **Carousel plan**: one text-only request with listing facts (no `review_notes`) and the analyses, `prompts/carousel-plan.v1.md`.
+5. Every response goes through `generateValidated`: zod schema + extra checks (`checkCarouselPlan`), one retry with the problems, then `ValidationFailedError`.
+6. **Render**: each slide → `renderSlideDocument` (Modern template) → Playwright → PNG + overflow list. Photos and fonts are served from `https://assets.curb.local`; all other requests are blocked.
+7. Writes `out/<id>/slide-NN-<type>.png`, `caption.txt`, `alt-text.txt`, `plan.json`, `photo-analysis.json`. Exits non-zero if any slide overflows.
+
+`--mock` uses `createSampleModelClient`, a deterministic stand-in built from the sample's golden labels, so the whole pipeline runs without an API key. Without `--mock` it needs `ANTHROPIC_API_KEY` and costs money.
 
 ## Boundary rules (enforced)
 
@@ -49,15 +62,15 @@ Lint rules in [`eslint.config.js`](../eslint.config.js), proven by [`tests/bound
 
 ## Sensors
 
-| Command             | What it checks                                                             |
-| ------------------- | -------------------------------------------------------------------------- |
-| `pnpm typecheck`    | `tsc --noEmit` at the root and in every package (strict settings)          |
-| `pnpm lint`         | ESLint, type-aware, including the boundary rules; zero warnings            |
-| `pnpm format:check` | Prettier                                                                   |
-| `pnpm test`         | Vitest: unit tests, pipeline tests with the mocked client, lint-rule tests |
-| `pnpm test:render`  | Playwright render tests (every slide type × template, no overflow)         |
-| `pnpm check`        | All of the above, in that order; CI runs exactly this                      |
-| `pnpm eval`         | Real model over `samples/` → `evals/report.md` (Phase 3, costs money)      |
+| Command             | What it checks                                                                                                              |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm typecheck`    | `tsc --noEmit` at the root and in every package (strict settings)                                                           |
+| `pnpm lint`         | ESLint, type-aware, including the boundary rules; zero warnings                                                             |
+| `pnpm format:check` | Prettier                                                                                                                    |
+| `pnpm test`         | Vitest: unit tests, pipeline tests with the mocked client, lint-rule tests                                                  |
+| `pnpm test:render`  | Playwright render tests in `tests/render/`: every sample × template, max-length copy, and a check that overflow is detected |
+| `pnpm check`        | All of the above, in that order; CI runs exactly this                                                                       |
+| `pnpm eval`         | Real model over `samples/` → `evals/report.md` (Phase 3, costs money)                                                       |
 
 ## Layout
 
@@ -66,8 +79,9 @@ apps/web            review UI
 apps/server         API + jobs
 packages/*          see table above
 samples/NN/         sample listings: photos, listing.json, labels.json, credits.json (don't modify casually)
-tests/              repo-level tests (lint rules)
+tests/              repo-level tests: lint rules, render/ (Playwright)
 scripts/            small Node scripts used by package.json
+.cache/, out/       local cache and CLI output (git-ignored)
 docs/               this file, domain.md, harness-log.md, adr/
 .claude/skills/     agent skills: add-slide-type, add-template, tune-prompt
 ```
