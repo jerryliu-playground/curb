@@ -9,17 +9,21 @@
   },
   "scripts": {
     "dev": "pnpm --parallel --filter @curb/web --filter @curb/server dev",
-    "generate": "node scripts/not-implemented.mjs generate \"Phase 1\"",
+    "generate": "tsx apps/server/src/cli/generate.ts",
     "eval": "node scripts/not-implemented.mjs eval \"Phase 3\"",
     "typecheck": "tsc --noEmit -p tsconfig.json && pnpm -r typecheck",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "test:render": "playwright test -c packages/renderer",
+    "test:render": "playwright test",
     "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm test:render"
   },
   "devDependencies": {
+    "@curb/pipeline": "workspace:*",
+    "@curb/renderer": "workspace:*",
+    "@curb/shared": "workspace:*",
+    "@curb/templates": "workspace:*",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.64.1",
     "@types/node": "^26.6.6",
