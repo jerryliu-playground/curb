@@ -19,7 +19,8 @@ Photo analysis, carousel planning and critique all need a vision-capable model w
   - Forced `tool_choice` (`any` / `tool`) returns 400 on Opus 5.5 and Sonnet 5.5. See ADR 0007.
   - Check `stop_reason` before reading content; `refusal` and `max_tokens` are failures, not partial successes.
 - **Budgets (rule 9):** per-step `max_tokens` caps in config; images downscaled on the server before sending. Opus 5.5 accepts up to 2576 px on the long edge, and image tokens scale with pixel area, so start at a 1568 px long edge and tune with `pnpm eval`. Photo analysis is cached by image hash (SPEC.md §7).
-- **Logging:** never log keys; log prompts with user content only in debug mode.
+- **Refusal fallback:** requests send `fallbacks: "default"` with the `server-side-fallback-2026-07-01` beta, so a policy decline is retried on the API's default fallback model inside the same call. A final `refusal` is still a failure.
+- **Logging:** never log keys; log prompts with user content only in debug mode (`pnpm generate --debug`).
 
 ## Consequences
 

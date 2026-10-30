@@ -18,3 +18,11 @@ Render tests check pixel output and DOM overflow. If fonts load from a CDN, rend
 
 - Renders work offline and match between local runs and CI.
 - Fonts per template are added in a later change, each named in this ADR.
+
+## Bundled fonts
+
+| Family | Package                                                                               | Licence | Used by |
+| ------ | ------------------------------------------------------------------------------------- | ------- | ------- |
+| Inter  | `@fontsource-variable/inter` 5.3.0 (`inter-latin-wght-normal.woff2`, weights 100–900) | OFL-1.1 | Modern  |
+
+The renderer serves font files from `https://assets.curb.local/fonts/` through a Playwright route; pages can't reach the network.

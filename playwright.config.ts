@@ -1,8 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
-import { SLIDE_VIEWPORT } from "./src/index.ts";
+import { SLIDE_VIEWPORT } from "@curb/renderer";
 
 export default defineConfig({
-  testDir: "./test",
+  testDir: "./tests/render",
   testMatch: "**/*.spec.ts",
   forbidOnly: !!process.env.CI,
   reporter: process.env.CI ? "github" : "list",

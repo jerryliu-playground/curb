@@ -10,7 +10,7 @@ The harness needs fast, deterministic sensors (SPEC.md §8): typecheck, lint wit
 ## Decision
 
 - **Vitest 5** for unit and pipeline tests. One root `vitest.config.ts` picks up `{apps,packages}/*/{src,test}/**/*.test.ts(x)` and `tests/**/*.test.ts`.
-- **Playwright 1.64** (`@playwright/test`) for render tests. Config lives in `packages/renderer/playwright.config.ts`, viewport 1080×1350, `deviceScaleFactor: 1`. Specs are `*.spec.ts` so Vitest and Playwright never pick up each other's files.
+- **Playwright 1.64** (`@playwright/test`) for render tests. Config lives in the root `playwright.config.ts` and specs in `tests/render/`, because render tests combine pipeline mocks, templates and the renderer (amended in Phase 1; it was under `packages/renderer`). Viewport 1080×1350, `deviceScaleFactor: 1`. Specs are `*.spec.ts` so Vitest and Playwright never pick up each other's files.
 - **ESLint 10** flat config with `@eslint/js` recommended and `typescript-eslint` `recommendedTypeChecked` (project service). `--max-warnings 0`.
 - **Prettier 3**, `printWidth: 100`. CLAUDE.md, SPEC.md and `samples/` are excluded.
 - `pnpm check` = typecheck → lint → format check → Vitest → Playwright. CI runs exactly this.

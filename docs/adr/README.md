@@ -15,3 +15,4 @@ See [0001](0001-record-decisions-as-adrs.md) for the format.
 | [0009](0009-reel-with-local-ffmpeg.md)             | Reel with local ffmpeg                                  | Accepted (Ph. 4) |
 | [0010](0010-elevenlabs-voiceover.md)               | ElevenLabs voiceover                                    | Accepted (Ph. 4) |
 | [0011](0011-bundled-open-licensed-fonts.md)        | Bundle OFL fonts locally                                | Accepted         |
+| [0012](0012-sharp-for-image-preprocessing.md)      | sharp for photo downscaling                             | Accepted         |

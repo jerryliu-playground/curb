@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { SLIDE_VIEWPORT } from "../src/index.ts";
+import { SLIDE_VIEWPORT } from "@curb/renderer";
 
 // Proves the render toolchain works end to end: HTML in, PNG of the exact slide size out.
 test("renders an HTML page to a slide-sized PNG", async ({ page }) => {
