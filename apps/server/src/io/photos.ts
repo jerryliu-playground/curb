@@ -1,6 +1,6 @@
 import { readdir } from "node:fs/promises";
 import { join } from "node:path";
-import { BUDGET, type ListingPhoto } from "@curb/pipeline";
+import { BUDGET, type ListingPhoto, type ModelImage } from "@curb/pipeline";
 import sharp from "sharp";
 
 const PHOTO_EXTENSIONS = /\.(jpe?g|png|webp)$/i;
@@ -37,4 +37,17 @@ export async function loadPhotosForModel(
       };
     }),
   );
+}
+
+/** Downscales a rendered slide for the critique step (BUDGET.critiqueImageEdgePx). */
+export async function slideImageForModel(png: Uint8Array): Promise<ModelImage> {
+  const buffer = await sharp(png)
+    .resize({
+      width: BUDGET.critiqueImageEdgePx,
+      height: BUDGET.critiqueImageEdgePx,
+      fit: "inside",
+    })
+    .jpeg({ quality: 85 })
+    .toBuffer();
+  return { mediaType: "image/jpeg", base64: buffer.toString("base64") };
 }

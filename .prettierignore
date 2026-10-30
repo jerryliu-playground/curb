@@ -6,3 +6,4 @@ playwright-report/
 # Owner-maintained docs; keep their formatting as written.
 CLAUDE.md
 SPEC.md
+.claude/worktrees/

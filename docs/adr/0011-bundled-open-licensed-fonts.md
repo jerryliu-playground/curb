@@ -21,8 +21,18 @@ Render tests check pixel output and DOM overflow. If fonts load from a CDN, rend
 
 ## Bundled fonts
 
-| Family | Package                                                                               | Licence | Used by |
-| ------ | ------------------------------------------------------------------------------------- | ------- | ------- |
-| Inter  | `@fontsource-variable/inter` 5.3.0 (`inter-latin-wght-normal.woff2`, weights 100–900) | OFL-1.1 | Modern  |
+| Family             | Package                                                                                                                  | Licence | Used by                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------- | ---------------------------------------------------- |
+| Inter              | `@fontsource-variable/inter` 5.3.0 (`inter-latin-wght-normal.woff2`, weights 100–900)                                    | OFL-1.1 | Modern; body text in every template (demo brand kit) |
+| Cormorant Garamond | `@fontsource-variable/cormorant-garamond` 5.3.0 (`cormorant-garamond-latin-wght-{normal,italic}.woff2`, weights 300–700) | OFL-1.1 | Classic headings                                     |
+| Playfair Display   | `@fontsource-variable/playfair-display` 5.3.0 (`playfair-display-latin-wght-{normal,italic}.woff2`, weights 400–900)     | OFL-1.1 | Editorial display type and pull quotes               |
+
+All are listed in `BUNDLED_FONTS` (`packages/shared/src/brand-kit.ts`), so a brand kit can choose any of them. Each file is registered in `packages/renderer/src/fonts.ts`.
 
 The renderer serves font files from `https://assets.curb.local/fonts/` through a Playwright route; pages can't reach the network.
+
+### Template heading fonts (added 2026-10-30)
+
+Classic and Editorial have a signature heading face. When the brand kit keeps the default heading font (Inter), the template uses its own face; a brand kit that picked another bundled font keeps its choice. The slide root sets `--template-heading` for this (`packages/templates/src/heading-font.ts`). Body text always uses the brand kit's `--font-body`.
+
+Serif faces have tall ascenders and descenders: below `line-height` ≈ 1.25 (Cormorant Garamond) or 1.3 (Playfair Display) the glyphs overflow their line box and the render test reports it. Size text boxes with those line heights.

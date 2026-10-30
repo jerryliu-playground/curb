@@ -209,16 +209,37 @@ export function createSampleModelClient(sample: {
     };
   }
 
+  /** A different, still factual version of a slide: the next few visible features as its body. */
+  function regenerated(slideJson: string | undefined): Slide {
+    if (!slideJson) throw new Error("slide-regenerate request without meta.slide");
+    const slide = JSON.parse(slideJson) as Slide;
+    if (slide.type !== "feature" && slide.type !== "neighbourhood") return slide;
+    const features = byFile.get(slide.photo)?.visible_features ?? [];
+    const next = features.slice(3, 6).length > 0 ? features.slice(3, 6) : features.slice(0, 2);
+    return next.length > 0 ? { ...slide, body: sentence(next, LIMITS.bodyChars) } : slide;
+  }
+
   return {
     id: "mock:sample-labels",
     generate(request): Promise<ModelResponse> {
       const usage = { inputTokens: 0, outputTokens: 0 };
-      if (request.step === "photo-analysis") {
-        const file = request.meta?.photo;
-        if (!file) throw new Error("photo-analysis request without meta.photo");
-        return Promise.resolve({ output: analysis(file), usage });
+      const reply = (output: unknown) => Promise.resolve({ output, usage });
+      switch (request.step) {
+        case "photo-analysis": {
+          const file = request.meta?.photo;
+          if (!file) throw new Error("photo-analysis request without meta.photo");
+          return reply(analysis(file));
+        }
+        case "carousel-plan":
+          return reply(plan());
+        // The word list covers compliance deterministically; the stand-in model adds nothing.
+        case "compliance":
+          return reply({ flags: [] });
+        case "critique":
+          return reply({ summary: "No changes needed.", fixes: [] });
+        case "slide-regenerate":
+          return reply(regenerated(request.meta?.slide));
       }
-      return Promise.resolve({ output: plan(), usage });
     },
   };
 }

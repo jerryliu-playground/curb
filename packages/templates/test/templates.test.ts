@@ -71,6 +71,28 @@ describe.each(Object.entries(TEMPLATES))("template %s", (_name, template) => {
   });
 });
 
+describe("template heading font", () => {
+  it("uses the template's own face while the brand kit keeps the default heading font", () => {
+    const html = renderSlideDocument(TEMPLATES.classic, examples.cover, ctx, { fontFaceCss: "" });
+    expect(html).toContain("--template-heading:&quot;Cormorant Garamond&quot;, serif");
+  });
+
+  it("keeps a heading font the brand kit chose", () => {
+    const brandKit = {
+      ...DEMO_BRAND_KIT,
+      fonts: { heading: "Playfair Display" as const, body: "Inter" as const },
+    };
+    const html = renderSlideDocument(
+      TEMPLATES.classic,
+      examples.cover,
+      { ...ctx, brandKit },
+      { fontFaceCss: "" },
+    );
+    expect(html).toContain("--template-heading:var(--font-heading)");
+    expect(html).toContain('--font-heading: "Playfair Display"');
+  });
+});
+
 describe("format", () => {
   it("formats prices in Canadian dollars", () => {
     expect(formatPrice(6495000)).toBe("$6,495,000");

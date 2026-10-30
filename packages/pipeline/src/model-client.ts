@@ -1,6 +1,7 @@
 import type { z } from "zod";
 
-export type PipelineStep = "photo-analysis" | "carousel-plan";
+export type PipelineStep =
+  "photo-analysis" | "carousel-plan" | "critique" | "compliance" | "slide-regenerate";
 export type Effort = "low" | "medium" | "high";
 
 export interface ModelImage {

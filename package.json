@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:render": "playwright test",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm test:render"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test && pnpm test:render && pnpm test:e2e",
+    "test:e2e": "playwright test -c playwright.e2e.config.ts"
   },
   "devDependencies": {
     "@curb/pipeline": "workspace:*",

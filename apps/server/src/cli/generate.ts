@@ -6,10 +6,10 @@ import { parseArgs } from "node:util";
 import { generateCarousel, type ModelClient } from "@curb/pipeline";
 import { createSampleModelClient, type SampleLabels } from "@curb/pipeline/testing";
 import { launchRenderer, renderCarousel } from "@curb/renderer";
-import { ListingSchema } from "@curb/shared";
+import { ListingSchema, locationLabel } from "@curb/shared";
 import { DEMO_BRAND_KIT, TEMPLATES, type TemplateName } from "@curb/templates";
 import { fileCache } from "../io/file-cache.ts";
-import { listPhotoFiles, loadPhotosForModel } from "../io/photos.ts";
+import { listPhotoFiles, loadPhotosForModel, slideImageForModel } from "../io/photos.ts";
 import { createAnthropicModelClient } from "../model/anthropic-client.ts";
 
 const USAGE =
@@ -72,10 +72,16 @@ try {
     brandKit: DEMO_BRAND_KIT,
     cache: fileCache(resolve(cwd, ".cache/photo-analysis")),
     render: (input) => renderCarousel(renderer, { ...input, template, photoDir: listingDir }),
+    prepareSlideImage: slideImageForModel,
     onProgress: (e) => {
       if (e.step === "photo-analysis") {
         console.log(`  analyzed ${e.done}/${e.total} ${e.file}${e.fromCache ? " (cached)" : ""}`);
-      } else console.log(`  ${e.step}: ${e.status}`);
+      } else if (e.step === "critique") {
+        console.log(
+          `  critique round ${e.round}: ${e.status}${e.changes === undefined ? "" : `, ${e.changes} changes`}`,
+        );
+      } else if (e.step === "render") console.log(`  render ${e.slides} slides: ${e.status}`);
+      else console.log(`  ${e.step}: ${e.status}`);
     },
   });
 
@@ -96,6 +102,19 @@ try {
   );
   await writeFile(join(outDir, "plan.json"), JSON.stringify(result.plan, null, 2));
   await writeFile(join(outDir, "photo-analysis.json"), JSON.stringify(result.analyses, null, 2));
+  await writeFile(join(outDir, "critique.json"), JSON.stringify(result.critique, null, 2));
+  await writeFile(join(outDir, "compliance-flags.json"), JSON.stringify(result.flags, null, 2));
+  for (const round of result.critique) {
+    console.log(`Critique round ${round.round}: ${round.summary}`);
+    for (const c of round.changes)
+      console.log(`  slide ${c.slide + 1} ${c.field}: "${c.from}" → "${c.to}"`);
+  }
+  // CLAUDE.md rule 8: compliance flags are never hidden.
+  for (const f of result.flags) {
+    console.log(
+      `Compliance flag (${locationLabel(f.location)}): "${f.phrase}" (${f.ground}). ${f.suggestion}`,
+    );
+  }
 
   const overflow = result.slides.flatMap((s, i) => s.overflow.map((o) => `slide ${i + 1}: ${o}`));
   console.log(`Wrote ${result.slides.length} slides to ${outDir}`);
