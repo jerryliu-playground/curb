@@ -12,6 +12,8 @@ export interface RenderCarouselInput {
   brandKit: BrandKit;
   /** Directory holding the listing's photos (the full-size files, not the model copies). */
   photoDir: string;
+  /** Slide indexes to render, in the order returned. Defaults to every slide. */
+  only?: readonly number[];
 }
 
 /** Renders every slide of a plan with one template. */
@@ -31,7 +33,9 @@ export async function renderCarousel(
   const fonts = fontFaceCss();
 
   const results: RenderedSlide[] = [];
-  for (const [index, slide] of input.plan.slides.entries()) {
+  for (const index of input.only ?? input.plan.slides.keys()) {
+    const slide = input.plan.slides[index];
+    if (!slide) throw new Error(`There is no slide ${index} to render.`);
     const ctx: SlideContext = {
       listing: input.listing,
       brandKit: input.brandKit,

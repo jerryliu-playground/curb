@@ -148,10 +148,12 @@ describe("generateCarousel", () => {
       },
       render: ({ plan }) =>
         Promise.resolve(plan.slides.map(() => ({ png: new Uint8Array(), overflow: [] }))),
+      prepareSlideImage: () => Promise.resolve({ mediaType: "image/png", base64: "" }),
       onProgress: (e) => events.push(e.step),
     });
     expect(result.slides).toHaveLength(result.plan.slides.length);
     expect(events.indexOf("carousel-plan")).toBeGreaterThan(events.lastIndexOf("photo-analysis"));
-    expect(events.at(-1)).toBe("render");
+    expect(events.at(-1)).toBe("compliance");
+    expect(result.critique).toHaveLength(1);
   });
 });
