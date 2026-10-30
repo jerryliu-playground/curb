@@ -22,11 +22,11 @@
     "Wide-plank wood floors"
   ],
   "review_notes": [
-    "Photos clearly show a Southern California setting (looks like a Los Angeles-area planned community): tall palm trees in photo-2, photo-3, photo-4, photo-5, photo-6 and photo-9, plus palms along the street in main.jpg. This does not fit Ontario; consider replacing these photos or accept the mismatch for a dev sample.",
+    "Photos clearly show a Southern California setting (looks like a Los Angeles-area planned community): tall palm trees in photo 03, photo 04, photo 05, photo 06, photo 07 and photo 10, plus palms along the street in photo 01. This does not fit Ontario; consider replacing these photos or accept the mismatch for a dev sample.",
     "Neither Niagara nor Muskoka is a natural fit; St. Catharines (Niagara) chosen because the photos show an urban townhouse, not a cottage. Muskoka would fit worse.",
-    "main.jpg shows a visible house number on the facade; check it is not legible in the carousel.",
+    "photo 01 shows a visible house number on the facade; check it is not legible in the carousel.",
     "Only one bedroom (primary) and one bathroom (primary ensuite) are shown. beds=2 and baths=3 are assumptions for a three-storey townhouse; adjust if you want counts limited to what is visible.",
-    "photo-9 has a Buddha head garden ornament and photo-5 has a figurative painting; consider whether they suit the brand.",
+    "photo 10 has a Buddha head garden ornament and photo 06 has a figurative painting; consider whether they suit the brand.",
     "Kitchen sink faucet and appliance brands are not named in copy on purpose; fire table fuel type (gas) is not stated because it is not visible."
   ]
 }

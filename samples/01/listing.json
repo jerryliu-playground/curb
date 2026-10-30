@@ -23,11 +23,11 @@
   ],
   "review_notes": [
     "City set to Burlington (escarpment) instead of Oakville because the photos show a hilltop with views down over a city; Oakville is flat. Change if you prefer.",
-    "Strong non-Ontario cues: palm trees (img0, img8, img13), large olive trees (img0), green lawn that looks like artificial turf, Southern California architecture. Consider swapping img0 and img13 or accepting the mismatch for a test sample.",
-    "img14 shows the sun setting over a water horizon; from north Burlington the lake lies to the south-east, so a sunset over water is not plausible. The description avoids naming a lake or ocean.",
-    "Only one bedroom is shown (img8) and two shower/bath spaces (img9, img10); beds 4 / baths 5 / 6,800 sqft are invented and not backed by photos.",
-    "Photos come from different houses: img6 (office) and img10 (gym) have a different style and look onto a street/fence; the rest look like one house.",
-    "Street address is invented; check it does not exist in Burlington. Filenames reference '610 Arkell Dr', which may be a real address, so it is not used in the listing.",
-    "Visible artwork in interiors (img2, img3, img6, img7, img8) may be copyrighted; avoid cropping slides to feature it."
+    "Strong non-Ontario cues: palm trees (photo 01, photo 08, photo 13), large olive trees (photo 01), green lawn that looks like artificial turf, Southern California architecture. Consider swapping photo 01 and photo 13 or accepting the mismatch for a test sample.",
+    "photo 14 shows the sun setting over a water horizon; from north Burlington the lake lies to the south-east, so a sunset over water is not plausible. The description avoids naming a lake or ocean.",
+    "Only one bedroom is shown (photo 08) and two shower/bath spaces (photo 09, photo 10); beds 4 / baths 5 / 6,800 sqft are invented and not backed by photos.",
+    "Photos come from different houses: photo 06 (office) and photo 10 (gym) have a different style and look onto a street/fence; the rest look like one house.",
+    "Street address is invented; check it does not exist in Burlington.",
+    "Visible artwork in interiors (photo 02, photo 03, photo 06, photo 07, photo 08) may be copyrighted; avoid cropping slides to feature it."
   ]
 }

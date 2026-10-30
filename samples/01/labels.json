@@ -2,74 +2,182 @@
   "status": "draft",
   "photos": [
     {
-      "file": "610-Arkell-Dr_img0_c9fe7fe8.jpg",
+      "file": "9081-lookout-ridge-lane-01.jpg",
       "room_type": "exterior_front",
-      "visible_features": ["white single-storey exterior", "flat roof", "curved concrete driveway", "clipped boxwood hedges", "mature olive trees", "palm trees", "double garage doors", "glass front entry doors", "climbing vines on wall"]
+      "visible_features": [
+        "white single-storey exterior",
+        "flat roof",
+        "curved concrete driveway",
+        "clipped boxwood hedges",
+        "mature olive trees",
+        "palm trees",
+        "double garage doors",
+        "glass front entry doors",
+        "climbing vines on wall"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img2_3f4860a2.jpg",
+      "file": "9081-lookout-ridge-lane-02.jpg",
       "room_type": "living_room",
-      "visible_features": ["dark herringbone wood floor", "black-framed floor-to-ceiling glass doors", "sheer floor-length curtains", "pot lights", "crown moulding", "view through doors to pool"]
+      "visible_features": [
+        "dark herringbone wood floor",
+        "black-framed floor-to-ceiling glass doors",
+        "sheer floor-length curtains",
+        "pot lights",
+        "crown moulding",
+        "view through doors to pool"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img3_b013504a.jpg",
+      "file": "9081-lookout-ridge-lane-03.jpg",
       "room_type": "family_room",
-      "visible_features": ["curved wall of floor-to-ceiling windows", "wide elevated view over city and trees", "dark wood floor", "floor-length curtains"]
+      "visible_features": [
+        "curved wall of floor-to-ceiling windows",
+        "wide elevated view over city and trees",
+        "dark wood floor",
+        "floor-length curtains"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img4_6e8775c0.jpg",
+      "file": "9081-lookout-ridge-lane-04.jpg",
       "room_type": "dining_room",
-      "visible_features": ["long dining table with upholstered chairs", "open to sitting area", "floor-to-ceiling windows", "black-framed glass doors to garden", "dark herringbone floor"]
+      "visible_features": [
+        "long dining table with upholstered chairs",
+        "open to sitting area",
+        "floor-to-ceiling windows",
+        "black-framed glass doors to garden",
+        "dark herringbone floor"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img5_951166f2.jpg",
+      "file": "9081-lookout-ridge-lane-05.jpg",
       "room_type": "kitchen",
-      "visible_features": ["grey cabinetry", "glass-front upper cabinets", "stone counters and backsplash", "centre island", "professional gas range with double oven", "range hood", "built-in refrigerator", "stacked wall ovens", "skylight", "eat-in round glass table", "dark wood floor"]
+      "visible_features": [
+        "grey cabinetry",
+        "glass-front upper cabinets",
+        "stone counters and backsplash",
+        "centre island",
+        "professional gas range with double oven",
+        "range hood",
+        "built-in refrigerator",
+        "stacked wall ovens",
+        "skylight",
+        "eat-in round glass table",
+        "dark wood floor"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img6_b7f92006.jpg",
+      "file": "9081-lookout-ridge-lane-06.jpg",
       "room_type": "office",
-      "visible_features": ["wood-panelled walls", "built-in shelving", "black-framed French doors to garden", "pot lights", "large pendant light", "panelled doors"]
+      "visible_features": [
+        "wood-panelled walls",
+        "built-in shelving",
+        "black-framed French doors to garden",
+        "pot lights",
+        "large pendant light",
+        "panelled doors"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img7_fad372d7.jpg",
+      "file": "9081-lookout-ridge-lane-07.jpg",
       "room_type": "living_room",
-      "visible_features": ["fireplace with dark stone mantel", "decorative crown moulding", "dark herringbone floor", "cased doorway to hall"]
+      "visible_features": [
+        "fireplace with dark stone mantel",
+        "decorative crown moulding",
+        "dark herringbone floor",
+        "cased doorway to hall"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img8_5052366e.jpg",
+      "file": "9081-lookout-ridge-lane-08.jpg",
       "room_type": "bedroom",
-      "visible_features": ["wall of black-framed floor-to-ceiling glass doors", "direct walkout to lawn", "elevated view", "dark herringbone floor", "deep red accent walls", "palm trees outside"]
+      "visible_features": [
+        "wall of black-framed floor-to-ceiling glass doors",
+        "direct walkout to lawn",
+        "elevated view",
+        "dark herringbone floor",
+        "deep red accent walls",
+        "palm trees outside"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img9_1557c888.jpg",
+      "file": "9081-lookout-ridge-lane-09.jpg",
       "room_type": "bathroom",
-      "visible_features": ["large built-in soaking tub", "mosaic tile feature wall", "white vanity with dark stone top", "undermount sink", "wall sconces", "salon-style wash basin", "dark ceiling", "pot light", "shag carpet"]
+      "visible_features": [
+        "large built-in soaking tub",
+        "mosaic tile feature wall",
+        "white vanity with dark stone top",
+        "undermount sink",
+        "wall sconces",
+        "salon-style wash basin",
+        "dark ceiling",
+        "pot light",
+        "shag carpet"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img10_61cda3cb.jpg",
+      "file": "9081-lookout-ridge-lane-10.jpg",
       "room_type": "other",
-      "visible_features": ["home gym", "Pilates reformer", "Gyrotonic exercise machine", "floor-to-ceiling windows", "glass-enclosed shower", "vanity with stone top", "mirrored wall", "pot lights", "carpet"]
+      "visible_features": [
+        "home gym",
+        "Pilates reformer",
+        "Gyrotonic exercise machine",
+        "floor-to-ceiling windows",
+        "glass-enclosed shower",
+        "vanity with stone top",
+        "mirrored wall",
+        "pot lights",
+        "carpet"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img11_424fbdeb.jpg",
+      "file": "9081-lookout-ridge-lane-11.jpg",
       "room_type": "pool",
-      "visible_features": ["in-ground pool with underwater lights", "lawn terrace", "glass railing", "stepping-stone path", "covered patio with columns", "sunset view over hills"]
+      "visible_features": [
+        "in-ground pool with underwater lights",
+        "lawn terrace",
+        "glass railing",
+        "stepping-stone path",
+        "covered patio with columns",
+        "sunset view over hills"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img12_fd905e12.jpg",
+      "file": "9081-lookout-ridge-lane-12.jpg",
       "room_type": "exterior_rear",
-      "visible_features": ["lit in-ground pool", "outdoor fireplace in curved wall", "curved glass-walled room", "black-framed glass doors along rear", "lawn", "evening city-lights view", "outdoor wall lantern"]
+      "visible_features": [
+        "lit in-ground pool",
+        "outdoor fireplace in curved wall",
+        "curved glass-walled room",
+        "black-framed glass doors along rear",
+        "lawn",
+        "evening city-lights view",
+        "outdoor wall lantern"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img13_8eb2cfdc.jpg",
+      "file": "9081-lookout-ridge-lane-13.jpg",
       "room_type": "aerial",
-      "visible_features": ["flat-roof white house", "lower level below lawn terrace", "pool and lawn terrace", "curved glass corner room", "hillside lot with dense trees", "palm trees", "neighbouring houses on hill above"]
+      "visible_features": [
+        "flat-roof white house",
+        "lower level below lawn terrace",
+        "pool and lawn terrace",
+        "curved glass corner room",
+        "hillside lot with dense trees",
+        "palm trees",
+        "neighbouring houses on hill above"
+      ]
     },
     {
-      "file": "610-Arkell-Dr_img14_f7adba9a.jpg",
+      "file": "9081-lookout-ridge-lane-14.jpg",
       "room_type": "pool",
-      "visible_features": ["long in-ground pool", "glass railing", "stepping-stone path in lawn", "sunset over water horizon", "curved glass-walled room beside pool"]
+      "visible_features": [
+        "long in-ground pool",
+        "glass railing",
+        "stepping-stone path in lawn",
+        "sunset over water horizon",
+        "curved glass-walled room beside pool"
+      ]
     }
   ]
 }

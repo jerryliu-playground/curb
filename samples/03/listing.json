@@ -22,12 +22,11 @@
     "Lit in-ground pool and spa with city view"
   ],
   "review_notes": [
-    "Setting does not look like Ontario: hillside panorama over a large city (photos 5, 7) and the daytime view in photo 5 looks like a coastal basin with distant towers; Ottawa has no comparable hillside city-lights view. Consider dropping the view highlight or swapping photo 7.",
-    "Snake plants planted outdoors at the entry (photo 1) and year-round open-air indoor/outdoor living are not typical of Ontario's climate.",
-    "Photo 1 shows a real-looking house number ('9315') on the wall; it does not match the invented address and could identify the original property. Consider cropping or swapping.",
-    "Photos 2 and 4 show the same grand piano and the interiors are stylistically continuous, so this set looks like one real property shoot rather than several photographers; please confirm each image's licence when filling credits.json.",
+    "Setting does not look like Ontario: hillside panorama over a large city (photos 05, 07) and the daytime view in photo 05 looks like a coastal basin with distant towers; Ottawa has no comparable hillside city-lights view. Consider dropping the view highlight or swapping photo 07.",
+    "Snake plants planted outdoors at the entry (photo 01) and year-round open-air indoor/outdoor living are not typical of Ontario's climate.",
+    "Photo 01 shows a real-looking house number ('9315') on the wall; it does not match the invented address and could identify the original property. Consider cropping or swapping.",
     "Only one bedroom and no bathrooms are shown; beds 3 / baths 3 / 4,200 sqft are plausible guesses for a home this size, not verified by photos.",
-    "Photo 6 (walk-in closet) is labelled room_type 'other' since there is no closet type; the fire feature in photo 4 is partly obscured, so it is described generically.",
+    "Photo 06 (walk-in closet) is labelled room_type 'other' since there is no closet type; the fire feature in photo 04 is partly obscured, so it is described generically.",
     "Piano, guitars, TVs, patio heaters and furniture are treated as staging and left out of the copy."
   ]
 }

@@ -2,7 +2,7 @@
   "status": "draft",
   "photos": [
     {
-      "file": "main.jpg",
+      "file": "17-quillfeather-lane-01.jpg",
       "room_type": "exterior_front",
       "visible_features": [
         "three-storey modern facade",
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "file": "photo-1.jpg",
+      "file": "17-quillfeather-lane-02.jpg",
       "room_type": "living_room",
       "visible_features": [
         "open-concept living, dining and kitchen",
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "file": "photo-2.jpg",
+      "file": "17-quillfeather-lane-03.jpg",
       "room_type": "living_room",
       "visible_features": [
         "corner windows on two walls",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "file": "photo-3.jpg",
+      "file": "17-quillfeather-lane-04.jpg",
       "room_type": "kitchen",
       "visible_features": [
         "waterfall-edge stone island",
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "file": "photo-4.jpg",
+      "file": "17-quillfeather-lane-05.jpg",
       "room_type": "kitchen",
       "visible_features": [
         "built-in stainless fridge",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "file": "photo-5.jpg",
+      "file": "17-quillfeather-lane-06.jpg",
       "room_type": "primary_bedroom",
       "visible_features": [
         "corner windows",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "file": "photo-6.jpg",
+      "file": "17-quillfeather-lane-07.jpg",
       "room_type": "patio",
       "visible_features": [
         "balcony with glass railing",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "file": "photo-7.jpg",
+      "file": "17-quillfeather-lane-08.jpg",
       "room_type": "primary_bathroom",
       "visible_features": [
         "freestanding soaking tub",
@@ -96,7 +96,7 @@
       ]
     },
     {
-      "file": "photo-8.jpg",
+      "file": "17-quillfeather-lane-09.jpg",
       "room_type": "family_room",
       "visible_features": [
         "upper-level sitting area",
@@ -107,7 +107,7 @@
       ]
     },
     {
-      "file": "photo-9.jpg",
+      "file": "17-quillfeather-lane-10.jpg",
       "room_type": "patio",
       "visible_features": [
         "roof terrace",
