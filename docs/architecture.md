@@ -17,14 +17,14 @@ Every model output is validated against a zod schema from `@curb/shared` (ADR 00
 
 ## Packages
 
-| Package           | Role                                                                                     | May depend on                                |
-| ----------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------- |
-| `@curb/shared`    | Types, zod schemas, compliance word list                                                 | — (leaf)                                     |
-| `@curb/templates` | Pure React slide components, brand-kit tokens, render-to-HTML helper                     | `shared`                                     |
-| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement, `renderCarousel`                        | `shared`, `templates`                        |
-| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface; mocks in `@curb/pipeline/testing` | `shared` (render is injected)                |
-| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config                    | all packages, `@anthropic-ai/sdk` (Phase 1)  |
-| `@curb/web`       | React + Vite review UI                                                                   | `shared` (talks to the server over HTTP/SSE) |
+| Package           | Role                                                                                              | May depend on                                |
+| ----------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `@curb/shared`    | Types, zod schemas, compliance word list                                                          | — (leaf)                                     |
+| `@curb/templates` | Pure React slide components (Modern, Classic, Editorial), brand-kit tokens, render-to-HTML helper | `shared`                                     |
+| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement, `renderCarousel`                                 | `shared`, `templates`                        |
+| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface; mocks in `@curb/pipeline/testing`          | `shared` (render is injected)                |
+| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config                             | all packages, `@anthropic-ai/sdk` (Phase 1)  |
+| `@curb/web`       | React + Vite review UI                                                                            | `shared` (talks to the server over HTTP/SSE) |
 
 ```
 web ──HTTP/SSE──▶ server ──▶ pipeline ──▶ shared
@@ -45,10 +45,28 @@ The pipeline doesn't import the renderer: `generateCarousel` takes a `render` fu
 3. **Photo analysis**: one request per photo, `prompts/photo-analysis.v1.md`, cached in `.cache/photo-analysis/` by image hash + prompt version + model.
 4. **Carousel plan**: one text-only request with listing facts (no `review_notes`) and the analyses, `prompts/carousel-plan.v1.md`.
 5. Every response goes through `generateValidated`: zod schema + extra checks (`checkCarouselPlan`), one retry with the problems, then `ValidationFailedError`.
-6. **Render**: each slide → `renderSlideDocument` (Modern template) → Playwright → PNG + overflow list. Photos and fonts are served from `https://assets.curb.local`; all other requests are blocked.
+6. **Render**: each slide → `renderSlideDocument` with the chosen template (`--template modern|classic|editorial`, default Modern; registry `TEMPLATES` in `packages/templates/src/index.ts`) → Playwright → PNG + overflow list. Photos and fonts are served from `https://assets.curb.local`; all other requests are blocked.
 7. Writes `out/<id>/slide-NN-<type>.png`, `caption.txt`, `alt-text.txt`, `plan.json`, `photo-analysis.json`. Exits non-zero if any slide overflows.
 
 `--mock` uses `createSampleModelClient`, a deterministic stand-in built from the sample's golden labels, so the whole pipeline runs without an API key. Without `--mock` it needs `ANTHROPIC_API_KEY` and costs money.
+
+## Critique, compliance and review (Phase 2)
+
+`generateCarousel` now runs all of steps 1–4:
+
+- **Critique rounds** (`steps/critique.ts`, `prompts/critique.v1.md`): the rendered slides (downscaled to `BUDGET.critiqueImageEdgePx`) plus measured overflow go to the model, which returns fixes (headline, body, photo, focal point) for slides that need them. `applyCritiqueFixes` applies them to copies; fixes that would break the plan are sent back as validation problems. Only changed slides are re-rendered. At most `BUDGET.maxCritiqueRounds` (2) rounds; the log of changes per round is kept and shown in the UI.
+- **Compliance** (`steps/check-compliance.ts`, `prompts/compliance.v1.md`): the deterministic word list in `@curb/shared` plus a model review. Model flags must quote text that exists at their location. Flags are merged by location + phrase.
+- **Regenerate one slide** (`steps/regenerate-slide.ts`, `prompts/slide-regenerate.v1.md`): same slide type, the user's note, photo uniqueness enforced.
+
+The review flow lives in `apps/server` (`JobService`, routes under `/api`) and `apps/web` (start screen → progress → review). See ADR 0013 for the approval contract and export.
+
+```
+web (React)  ── POST /api/jobs ─────────▶ JobService.create → generateCarousel (steps 1–4)
+             ◀─ SSE /api/jobs/:id/events ─ progress, updated, ready
+             ── PATCH slide / copy, POST regenerate ─▶ validate → re-render slide → re-check compliance → clear approval
+             ── POST approve {shownFlagIds} ─▶ every flag shown? no overflow? → approved
+             ── GET export.zip ─▶ 409 unless approved
+```
 
 ## Boundary rules (enforced)
 
@@ -69,6 +87,7 @@ Lint rules in [`eslint.config.js`](../eslint.config.js), proven by [`tests/bound
 | `pnpm format:check` | Prettier                                                                                                                    |
 | `pnpm test`         | Vitest: unit tests, pipeline tests with the mocked client, lint-rule tests                                                  |
 | `pnpm test:render`  | Playwright render tests in `tests/render/`: every sample × template, max-length copy, and a check that overflow is detected |
+| `pnpm test:e2e`     | Playwright end-to-end test of the review UI against the server in mock mode                                                 |
 | `pnpm check`        | All of the above, in that order; CI runs exactly this                                                                       |
 | `pnpm eval`         | Real model over `samples/` → `evals/report.md` (Phase 3, costs money)                                                       |
 

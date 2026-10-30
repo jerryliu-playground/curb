@@ -20,9 +20,9 @@ If a library's or model API's behaviour is uncertain, check its current document
 ## Commands
 ```bash
 pnpm install
-pnpm dev                              # web + server
+pnpm dev                              # web (5173) + server (3001); mock model unless CURB_MODEL=anthropic
 pnpm generate --listing samples/01    # CLI pipeline run → out/ (real model, costs money; add --mock to run without the API)
-pnpm check                            # typecheck + lint + format check + unit + render tests (must pass before a task is done)
+pnpm check                            # typecheck + lint + format check + unit + render + e2e tests (must pass before a task is done)
 pnpm format                           # apply Prettier
 pnpm eval                             # runs the real model over samples → evals/report.md (costs money; run only when asked or when changing prompts; stub until Phase 3)
 ```
