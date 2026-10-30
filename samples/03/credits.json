@@ -1,0 +1,47 @@
+{
+  "note": "Photos are royalty-free (Pexels/Unsplash) per owner. Filenames contain no photographer names; fill in the TODOs.",
+  "photos": [
+    {
+      "file": "48-lanternfield-crescent-01.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-02.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-03.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-04.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-05.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-06.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "48-lanternfield-crescent-07.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    }
+  ]
+}

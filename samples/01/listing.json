@@ -1,0 +1,33 @@
+{
+  "id": "01",
+  "status": "draft",
+  "address": {
+    "street": "9081 Lookout Ridge Lane",
+    "city": "Burlington",
+    "province": "ON",
+    "postal_code": "L7P 4Z8"
+  },
+  "price_cad": 6495000,
+  "property_type": "detached",
+  "beds": 4,
+  "baths": 5,
+  "sqft": 6800,
+  "description": "A detached single-storey home with a lower level, set on a landscaped lot with a curved driveway, clipped hedges and mature trees. Dark herringbone floors run through the main rooms, and black-framed floor-to-ceiling glass doors line several walls. The living room opens toward the pool, and a sitting area has a curved wall of windows facing a wide view. The dining room holds a long table and opens to a lounge area. The kitchen has grey cabinetry with glass-front uppers, stone counters, an island, a professional range and a skylight. Other rooms include a wood-panelled office, a home gym with a glass shower, and a bathroom with a large soaking tub. Outside are an in-ground pool, an outdoor fireplace, lawn terraces and glass railings.",
+  "highlights": [
+    "In-ground pool with sunset view",
+    "Kitchen with island and professional range",
+    "Curved wall of floor-to-ceiling windows",
+    "Wood-panelled office with garden doors",
+    "Home gym with glass shower",
+    "Outdoor fireplace by the pool"
+  ],
+  "review_notes": [
+    "City set to Burlington (escarpment) instead of Oakville because the photos show a hilltop with views down over a city; Oakville is flat. Change if you prefer.",
+    "Strong non-Ontario cues: palm trees (photo 01, photo 08, photo 13), large olive trees (photo 01), green lawn that looks like artificial turf, Southern California architecture. Consider swapping photo 01 and photo 13 or accepting the mismatch for a test sample.",
+    "photo 14 shows the sun setting over a water horizon; from north Burlington the lake lies to the south-east, so a sunset over water is not plausible. The description avoids naming a lake or ocean.",
+    "Only one bedroom is shown (photo 08) and two shower/bath spaces (photo 09, photo 10); beds 4 / baths 5 / 6,800 sqft are invented and not backed by photos.",
+    "Photos come from different houses: photo 06 (office) and photo 10 (gym) have a different style and look onto a street/fence; the rest look like one house.",
+    "Street address is invented; check it does not exist in Burlington.",
+    "Visible artwork in interiors (photo 02, photo 03, photo 06, photo 07, photo 08) may be copyrighted; avoid cropping slides to feature it."
+  ]
+}

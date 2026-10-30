@@ -1,0 +1,123 @@
+{
+  "status": "draft",
+  "photos": [
+    {
+      "file": "17-quillfeather-lane-01.jpg",
+      "room_type": "exterior_front",
+      "visible_features": [
+        "three-storey modern facade",
+        "glass-railed balcony",
+        "rooftop pergola",
+        "glass front door",
+        "front steps with metal handrail",
+        "wood-look accent panels",
+        "trimmed hedges"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-02.jpg",
+      "room_type": "living_room",
+      "visible_features": [
+        "open-concept living, dining and kitchen",
+        "wide-plank wood floors",
+        "recessed ceiling lights",
+        "floor-to-ceiling windows",
+        "glass stair railing",
+        "pendant light over dining table"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-03.jpg",
+      "room_type": "living_room",
+      "visible_features": [
+        "corner windows on two walls",
+        "glass door to the outside",
+        "full-height drapes",
+        "wide-plank wood floors",
+        "recessed ceiling lights"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-04.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "waterfall-edge stone island",
+        "undermount sink",
+        "flat-panel cabinets",
+        "pendant light",
+        "wide opening to a side courtyard",
+        "green wall and sculpture in courtyard"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-05.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "built-in stainless fridge",
+        "glass-door wine fridge",
+        "built-in wall ovens",
+        "flat-panel cabinets to the ceiling",
+        "waterfall-edge stone island"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-06.jpg",
+      "room_type": "primary_bedroom",
+      "visible_features": [
+        "corner windows",
+        "glass door to a balcony",
+        "modern ceiling light fixture",
+        "recessed ceiling lights",
+        "wood floors"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-07.jpg",
+      "room_type": "patio",
+      "visible_features": [
+        "balcony with glass railing",
+        "composite decking",
+        "covered by overhang",
+        "street-facing view",
+        "palm trees in view"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-08.jpg",
+      "room_type": "primary_bathroom",
+      "visible_features": [
+        "freestanding soaking tub",
+        "wall-mounted tub filler",
+        "glass walk-in shower",
+        "stone-tile shower walls",
+        "shower niche",
+        "floating wood vanity",
+        "door to primary bedroom"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-09.jpg",
+      "room_type": "family_room",
+      "visible_features": [
+        "upper-level sitting area",
+        "wide sliding glass wall to roof terrace",
+        "open stair with railing",
+        "wood floors",
+        "recessed ceiling lights"
+      ]
+    },
+    {
+      "file": "17-quillfeather-lane-10.jpg",
+      "room_type": "patio",
+      "visible_features": [
+        "roof terrace",
+        "pergola",
+        "fire table",
+        "outdoor lounge seating",
+        "glass railing",
+        "composite decking",
+        "palm trees in view"
+      ]
+    }
+  ]
+}

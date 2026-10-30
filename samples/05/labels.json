@@ -1,0 +1,89 @@
+{
+  "status": "draft",
+  "photos": [
+    {
+      "file": "47-wendlow-avenue-01.jpg",
+      "room_type": "living_room",
+      "visible_features": [
+        "white brick fireplace with mantel",
+        "beamed white ceiling",
+        "hardwood floors",
+        "cast-iron radiator",
+        "bay of three windows with window seat",
+        "wall sconces above mantel",
+        "globe-bulb ceiling light"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-02.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "white shaker cabinets",
+        "stainless steel side-by-side fridge with water dispenser",
+        "white countertops",
+        "built-in glass-front cabinets",
+        "hardwood floors",
+        "built-in bench nook"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-03.jpg",
+      "room_type": "basement",
+      "visible_features": [
+        "lower-level family room",
+        "light vinyl plank flooring",
+        "white wainscoting",
+        "above-grade windows with sheer curtains",
+        "flush ceiling lights"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-04.jpg",
+      "room_type": "other",
+      "visible_features": [
+        "attic space",
+        "exposed wood rafters",
+        "wide-plank wood floors",
+        "wood-panelled walls",
+        "stair opening with wood railing"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-05.jpg",
+      "room_type": "exterior_front",
+      "visible_features": [
+        "shingle-clad exterior painted dark grey",
+        "front gable with decorative arched trim",
+        "brick front steps and base",
+        "front lawn",
+        "walkway",
+        "side patio with string lights",
+        "brick chimney"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-06.jpg",
+      "room_type": "dining_room",
+      "visible_features": [
+        "white brick fireplace",
+        "built-in glass-front cabinets",
+        "hardwood floors",
+        "cast-iron radiator",
+        "large window",
+        "beamed ceiling",
+        "globe-bulb pendant light"
+      ]
+    },
+    {
+      "file": "47-wendlow-avenue-07.jpg",
+      "room_type": "patio",
+      "visible_features": [
+        "side patio on concrete",
+        "wood privacy fence with lattice top",
+        "string lights",
+        "brick and shingle exterior walls",
+        "lower-level windows"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "02",
+  "status": "draft",
+  "address": {
+    "street": "18 Driftstone Lane",
+    "city": "Goderich",
+    "province": "ON",
+    "postal_code": "N7A 2K6"
+  },
+  "price_cad": 2850000,
+  "property_type": "detached",
+  "beds": 3,
+  "baths": 3,
+  "sqft": 3600,
+  "description": "A two-storey stucco home facing the lake. The tiled foyer has a curved staircase and a wrought-iron glass door to an inner courtyard with a fountain and stone paving. The living room has a wall of glass doors with water views and opens to a tiled terrace with two curtained cabanas and a glass railing. The dining room seats twelve under a crystal chandelier, with glass doors to the courtyard. The kitchen has a Viking range with double ovens, a pot filler, arched open shelving and an eat-in table. A family room has built-in arched cabinetry. The primary bedroom has a fireplace, floor-to-ceiling glass doors and a balcony over the water. There is a powder room with a stone sink, and three garage doors face the street.",
+  "highlights": [
+    "Lake views from the living room and primary bedroom",
+    "Terrace with two cabanas and glass railing",
+    "Courtyard with fountain and stone paving",
+    "Curved staircase in a tiled foyer",
+    "Kitchen with Viking double-oven range",
+    "Primary bedroom with fireplace and balcony"
+  ],
+  "review_notes": [
+    "Not Ontario-looking: agave and succulent plants (photo 01, photo 14), Mediterranean stucco with arched colonnades, a large open-water horizon that reads as ocean, and a gnarled coastal tree. Description says lake/water only.",
+    "photo 02 front shows a readable house number beside the door, a neighbour's number ('81') and painted lot numbers; the house appears to share walls with the buildings on both sides, so 'detached' may be wrong (could be semi-detached/townhouse).",
+    "Counts are guesses: only one bedroom (primary) is clearly visible, plus a sitting nook with a daybed off the kitchen (photo 12); only one bathroom (a powder room, photo 10) is visible. Beds 3 / baths 3 / sqft 3600 are invented.",
+    "photo 05 and photo 06 show a painting with partial nudity; check Instagram suitability before using those slides.",
+    "photo 03, photo 04, photo 15 are labelled 'other' (side walkway and inner courtyard); no matching room_type exists.",
+    "Three garage doors are visible in photo 02 but it is not certain all belong to this house."
+  ]
+}

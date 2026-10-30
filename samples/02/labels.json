@@ -1,0 +1,188 @@
+{
+  "status": "draft",
+  "photos": [
+    {
+      "file": "18-driftstone-lane-01.jpg",
+      "room_type": "patio",
+      "visible_features": [
+        "tiled terrace with white outdoor sofas",
+        "stone steps up to a deck",
+        "two curtained cabanas",
+        "glass railing",
+        "open water view",
+        "agave plants",
+        "climbing roses on fence"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-02.jpg",
+      "room_type": "exterior_front",
+      "visible_features": [
+        "cream stucco facade",
+        "arched entry with lantern",
+        "two Juliet balconies with window boxes",
+        "three garage doors",
+        "house number on facade",
+        "neighbouring buildings on both sides"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-03.jpg",
+      "room_type": "other",
+      "visible_features": [
+        "side walkway with stone pavers",
+        "ivy-covered wall",
+        "sculpture in wall niche",
+        "arched colonnade",
+        "glass doors to interior",
+        "climbing white roses"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-04.jpg",
+      "room_type": "other",
+      "visible_features": [
+        "inner courtyard",
+        "fountain with statue",
+        "flagstone and gravel paving",
+        "wrought-iron glass door",
+        "Juliet balcony",
+        "boxwood shrubs"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-05.jpg",
+      "room_type": "entry",
+      "visible_features": [
+        "tiled foyer",
+        "curved staircase with metal railing",
+        "tiered white fountain",
+        "wrought-iron glass door to courtyard",
+        "gilt-framed painting",
+        "upholstered bench"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-06.jpg",
+      "room_type": "entry",
+      "visible_features": [
+        "curved staircase",
+        "tiled floor",
+        "arched hallway",
+        "view through to living room and water",
+        "recessed lighting"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-07.jpg",
+      "room_type": "living_room",
+      "visible_features": [
+        "wall of glass doors",
+        "sheer white curtains",
+        "water view",
+        "recessed lighting",
+        "white sofa and armchairs",
+        "doors to terrace"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-08.jpg",
+      "room_type": "family_room",
+      "visible_features": [
+        "built-in arched cabinetry",
+        "upright piano",
+        "long floral sofa",
+        "wall-mounted TV",
+        "recessed lighting",
+        "carpet",
+        "view into living room"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-09.jpg",
+      "room_type": "dining_room",
+      "visible_features": [
+        "long table seating 12",
+        "crystal chandelier",
+        "wall sconces",
+        "glass doors to courtyard",
+        "built-in sideboard",
+        "tiled floor"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-10.jpg",
+      "room_type": "bathroom",
+      "visible_features": [
+        "powder room",
+        "stone vessel sink",
+        "gold mosaic arched niche",
+        "carved panel vanity",
+        "decorative door pulls"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-11.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "Viking range with double ovens",
+        "stainless steel hood",
+        "pot filler",
+        "arched open shelving",
+        "sculpted sink wall",
+        "eat-in table",
+        "tiled floor"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-12.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "Viking range",
+        "patterned tile backsplash",
+        "farmhouse table",
+        "glass door to courtyard",
+        "view into adjoining sitting nook with daybed",
+        "arched built-in shelving"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-13.jpg",
+      "room_type": "primary_bedroom",
+      "visible_features": [
+        "floor-to-ceiling glass doors",
+        "water view",
+        "balcony with railing",
+        "fireplace",
+        "chandelier",
+        "arched built-in shelves",
+        "tiled floor"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-14.jpg",
+      "room_type": "patio",
+      "visible_features": [
+        "tiled terrace at dusk",
+        "two curtained cabanas",
+        "glass railing",
+        "water view",
+        "outdoor sofas",
+        "agave plants"
+      ]
+    },
+    {
+      "file": "18-driftstone-lane-15.jpg",
+      "room_type": "other",
+      "visible_features": [
+        "courtyard at dusk",
+        "lit fountain with statue",
+        "flagstone and gravel paving",
+        "arched glass doors to dining room",
+        "wrought-iron glass door",
+        "Juliet balcony",
+        "potted urns"
+      ]
+    }
+  ]
+}

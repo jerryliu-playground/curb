@@ -1,0 +1,47 @@
+{
+  "note": "Photos are royalty-free (Pexels/Unsplash) per owner. Filenames contain no photographer names; fill in the TODOs.",
+  "photos": [
+    {
+      "file": "47-wendlow-avenue-01.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-02.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-03.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-04.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-05.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-06.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "47-wendlow-avenue-07.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    }
+  ]
+}

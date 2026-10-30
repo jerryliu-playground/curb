@@ -1,0 +1,94 @@
+{
+  "status": "draft",
+  "photos": [
+    {
+      "file": "48-lanternfield-crescent-01.jpg",
+      "room_type": "entry",
+      "visible_features": [
+        "oversized glass pivot front door",
+        "concrete entry step with LED strip lighting",
+        "smooth stucco walls",
+        "snake plant beds on both sides",
+        "wall-mounted security camera",
+        "house number on wall"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-02.jpg",
+      "room_type": "living_room",
+      "visible_features": [
+        "open-concept living area",
+        "pot lights throughout",
+        "light polished floor",
+        "dark stone feature wall",
+        "wood-panelled media wall",
+        "floor-to-ceiling sliding glass walls",
+        "glass-walled room off the living area"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-03.jpg",
+      "room_type": "kitchen",
+      "visible_features": [
+        "large centre island with cooktop",
+        "stainless steel island range hood",
+        "stainless side-by-side fridge with water dispenser",
+        "built-in wall oven and microwave",
+        "built-in wine fridge",
+        "dark flat-panel cabinets",
+        "white countertops",
+        "skylights",
+        "speckled terrazzo-style floor"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-04.jpg",
+      "room_type": "pool",
+      "visible_features": [
+        "in-ground pool with underwater lighting",
+        "flat-roof modern exterior",
+        "wall-to-wall sliding glass doors",
+        "stone patio",
+        "outdoor dining area",
+        "fire feature on patio",
+        "soffit lighting"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-05.jpg",
+      "room_type": "primary_bedroom",
+      "visible_features": [
+        "wide-plank wood floors",
+        "floor-to-ceiling sliding doors to pool deck",
+        "textured plaster accent wall",
+        "pot lights",
+        "open view to walk-in closet",
+        "glass railing beyond deck"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-06.jpg",
+      "room_type": "other",
+      "visible_features": [
+        "walk-in closet",
+        "built-in open shelving on three sides",
+        "centre island",
+        "hanging rods",
+        "wide-plank wood floors",
+        "pocket sliding door",
+        "pot lights"
+      ]
+    },
+    {
+      "file": "48-lanternfield-crescent-07.jpg",
+      "room_type": "view",
+      "visible_features": [
+        "pool with tiled edge and underwater lighting",
+        "attached spa section",
+        "cable railing",
+        "patio with outdoor dining area",
+        "elevated view over city lights"
+      ]
+    }
+  ]
+}
