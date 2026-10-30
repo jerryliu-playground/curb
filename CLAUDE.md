@@ -21,9 +21,10 @@ If a library's or model API's behaviour is uncertain, check its current document
 ```bash
 pnpm install
 pnpm dev                              # web + server
-pnpm generate --listing samples/01    # CLI pipeline run → out/
-pnpm check                            # typecheck + lint + unit + render tests (must pass before a task is done)
-pnpm eval                             # runs the real model over samples → evals/report.md (costs money; run only when asked or when changing prompts)
+pnpm generate --listing samples/01    # CLI pipeline run → out/ (stub until Phase 1)
+pnpm check                            # typecheck + lint + format check + unit + render tests (must pass before a task is done)
+pnpm format                           # apply Prettier
+pnpm eval                             # runs the real model over samples → evals/report.md (costs money; run only when asked or when changing prompts; stub until Phase 3)
 ```
 Keep this list accurate; update it when scripts change.
 

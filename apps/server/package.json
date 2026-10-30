@@ -1,0 +1,14 @@
+{
+  "name": "@curb/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@curb/shared": "workspace:*",
+    "fastify": "^5.12.7"
+  }
+}
