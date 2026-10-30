@@ -1,0 +1,30 @@
+{
+  "id": "05",
+  "status": "draft",
+  "address": {
+    "street": "47 Wendlow Avenue",
+    "city": "Hamilton",
+    "province": "ON",
+    "postal_code": "L8P 2K4"
+  },
+  "price_cad": 1195000,
+  "property_type": "detached",
+  "beds": 4,
+  "baths": 2,
+  "sqft": 2450,
+  "description": "A detached shingle-clad house with a gabled front, decorative arched trim, a brick chimney and brick front steps over a front lawn. The living room has a white brick fireplace, a beamed ceiling, hardwood floors, a cast-iron radiator and a window seat under three windows. The dining room has a second white brick fireplace, built-in glass-front cabinets and a large window. The kitchen has white shaker cabinets, white countertops and a stainless steel side-by-side fridge. The lower level has a family room with white wainscoting, vinyl plank floors and above-grade windows. Upstairs, the attic has exposed rafters and wide-plank wood floors. Outside, a fenced side patio has string lights.",
+  "highlights": [
+    "Two white brick fireplaces",
+    "Beamed ceilings and hardwood floors",
+    "Built-in glass-front cabinets",
+    "Lower-level family room",
+    "Open attic with wood floors",
+    "Fenced patio with string lights"
+  ],
+  "review_notes": [
+    "All 7 filenames contain the same real-looking US address (1837 Santa Clara Avenue) and the same shoot codes; this looks like one professional listing shoot, not several Pexels/Unsplash photographers. Please confirm the licence before use.",
+    "Front exterior shows palm-type and tropical plants (bird-of-paradise/banana-leaf plants at right, spiky palm at left) that don't fit Ontario.",
+    "No bedroom or bathroom photos: beds (4) and baths (2) are guesses based on house size (2.5 storeys plus lower level). Description does not mention them; check before use.",
+    "Neighbouring house (blue Victorian) visible in exterior and dining room window; not claimed in copy."
+  ]
+}

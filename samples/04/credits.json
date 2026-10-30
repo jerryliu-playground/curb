@@ -1,0 +1,65 @@
+{
+  "note": "Photos are royalty-free (Pexels/Unsplash) per owner. Filenames contain no photographer names; fill in the TODOs.",
+  "photos": [
+    {
+      "file": "main.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-1.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-2.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-3.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-4.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-5.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-6.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-7.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-8.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    },
+    {
+      "file": "photo-9.jpg",
+      "photographer": "TODO",
+      "source": "TODO: Pexels or Unsplash",
+      "url": "TODO"
+    }
+  ]
+}

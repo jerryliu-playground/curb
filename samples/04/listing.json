@@ -1,0 +1,32 @@
+{
+  "id": "04",
+  "status": "draft",
+  "address": {
+    "street": "17 Quillfeather Lane",
+    "city": "St. Catharines",
+    "province": "ON",
+    "postal_code": "L2R 3K7"
+  },
+  "price_cad": 1149000,
+  "property_type": "townhouse",
+  "beds": 2,
+  "baths": 3,
+  "sqft": 2150,
+  "description": "A three-storey modern townhouse with a glass-railed balcony and a rooftop terrace under a pergola. The main floor is open concept, with wide-plank wood floors, recessed lighting and tall windows on two sides. The kitchen has a waterfall-edge stone island, flat-panel cabinets, a built-in stainless fridge, a glass-door wine fridge and wall ovens. A wide opening off the kitchen leads to a side courtyard with a green wall. The primary bedroom has corner windows and a door to its own balcony. Its bathroom has a freestanding tub, a glass walk-in shower and a floating wood vanity. On the upper level, a sitting room opens through a sliding glass wall to the roof terrace, which has a fire table and lounge seating.",
+  "highlights": [
+    "Rooftop terrace with pergola and fire table",
+    "Waterfall-edge stone kitchen island",
+    "Built-in wine fridge and wall ovens",
+    "Primary bedroom with private balcony",
+    "Freestanding tub and glass walk-in shower",
+    "Wide-plank wood floors"
+  ],
+  "review_notes": [
+    "Photos clearly show a Southern California setting (looks like a Los Angeles-area planned community): tall palm trees in photo-2, photo-3, photo-4, photo-5, photo-6 and photo-9, plus palms along the street in main.jpg. This does not fit Ontario; consider replacing these photos or accept the mismatch for a dev sample.",
+    "Neither Niagara nor Muskoka is a natural fit; St. Catharines (Niagara) chosen because the photos show an urban townhouse, not a cottage. Muskoka would fit worse.",
+    "main.jpg shows a visible house number on the facade; check it is not legible in the carousel.",
+    "Only one bedroom (primary) and one bathroom (primary ensuite) are shown. beds=2 and baths=3 are assumptions for a three-storey townhouse; adjust if you want counts limited to what is visible.",
+    "photo-9 has a Buddha head garden ornament and photo-5 has a figurative painting; consider whether they suit the brand.",
+    "Kitchen sink faucet and appliance brands are not named in copy on purpose; fire table fuel type (gas) is not stated because it is not visible."
+  ]
+}

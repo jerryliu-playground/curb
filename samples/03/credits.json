@@ -1,0 +1,12 @@
+{
+  "note": "Photos are royalty-free (Pexels/Unsplash) per owner. Filenames contain no photographer names; fill in the TODOs.",
+  "photos": [
+    { "file": "carousel-1.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-2.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-3.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-4.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-5.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-6.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" },
+    { "file": "carousel-7.jpg", "photographer": "TODO", "source": "TODO: Pexels or Unsplash", "url": "TODO" }
+  ]
+}
