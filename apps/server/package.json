@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.3.0",
+    "@curb/evals": "workspace:*",
     "@curb/pipeline": "workspace:*",
     "@curb/renderer": "workspace:*",
     "@curb/shared": "workspace:*",

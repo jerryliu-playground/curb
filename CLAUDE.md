@@ -24,7 +24,8 @@ pnpm dev                              # web (5173) + server (3001); mock model u
 pnpm generate --listing samples/01    # CLI pipeline run → out/ (real model, costs money; add --mock to run without the API)
 pnpm check                            # typecheck + lint + format check + unit + render + e2e tests (must pass before a task is done)
 pnpm format                           # apply Prettier
-pnpm eval                             # runs the real model over samples → evals/report.md (costs money; run only when asked or when changing prompts; stub until Phase 3)
+pnpm eval                             # real model over samples → evals/report.md + evals/runs/ (costs money; run only when asked or when changing prompts)
+pnpm eval --mock                      # same harness with the mock model → out/eval-mock/ (free; checks the eval itself, not quality)
 ```
 Keep this list accurate; update it when scripts change.
 

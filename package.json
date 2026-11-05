@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "pnpm --parallel --filter @curb/web --filter @curb/server dev",
     "generate": "tsx apps/server/src/cli/generate.ts",
-    "eval": "node scripts/not-implemented.mjs eval \"Phase 3\"",
+    "eval": "tsx --env-file-if-exists=.env apps/server/src/cli/eval.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json && pnpm -r typecheck",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",

@@ -17,3 +17,4 @@ See [0001](0001-record-decisions-as-adrs.md) for the format.
 | [0011](0011-bundled-open-licensed-fonts.md)        | Bundle OFL fonts locally                                | Accepted         |
 | [0012](0012-sharp-for-image-preprocessing.md)      | sharp for photo downscaling                             | Accepted         |
 | [0013](0013-review-api-approval-and-export.md)     | Review API, approval contract, ZIP export               | Accepted         |
+| [0014](0014-evals-package-and-judge.md)            | Evals package, versioned judge prompt, saved runs       | Accepted         |

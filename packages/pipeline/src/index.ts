@@ -2,7 +2,7 @@ export { BUDGET } from "./budget.ts";
 export { memoryCache, type ResultCache, sha256 } from "./cache.ts";
 export * from "./generate-carousel.ts";
 export * from "./model-client.ts";
-export { loadPrompt } from "./prompts.ts";
+export { fillPrompt, loadPrompt, type Prompt } from "./prompts.ts";
 export * from "./steps/analyze-photos.ts";
 export * from "./steps/check-compliance.ts";
 export * from "./steps/critique.ts";

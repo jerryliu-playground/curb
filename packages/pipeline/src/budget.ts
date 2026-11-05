@@ -11,6 +11,8 @@ export const BUDGET = {
   critique: { maxTokens: 16000, effort: "medium" as Effort },
   compliance: { maxTokens: 8000, effort: "medium" as Effort },
   slideRegenerate: { maxTokens: 8000, effort: "medium" as Effort },
+  /** The eval judge (`pnpm eval` only). */
+  evalJudge: { maxTokens: 8000, effort: "medium" as Effort },
   /** Long edge of rendered slides sent back to the model for critique. */
   critiqueImageEdgePx: 800,
   /** One retry with the validation error, then fail (CLAUDE.md rule 1). */

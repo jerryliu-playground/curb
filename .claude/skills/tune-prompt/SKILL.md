@@ -15,9 +15,9 @@ description: Change a pipeline prompt safely — edit the versioned prompt file,
 
 3. **Keep tests deterministic.** Update mocked-client fixtures only if the expected output shape changed. `pnpm check` must pass without network access.
 
-4. **Run the eval** (after the owner's OK): `pnpm eval`. It writes `evals/report.md`.
+4. **Run the eval** (after the owner's OK): `pnpm eval`. It writes `evals/report.md` and `evals/runs/<id>.json`. To iterate on one listing first, use `pnpm eval --listing 01`. `pnpm eval --mock` is free but only proves the harness runs. If you changed `eval-judge.v*.md` itself, judge scores are no longer comparable with earlier runs; say so instead of comparing.
 
-5. **Compare** against the baseline: per-metric before/after, and any listing that got worse. A regression on accuracy or compliance blocks the change even if other scores improve.
+5. **Compare** against the baseline: the report's Summary table already shows each metric against the previous run and marks accuracy and compliance regressions as blocking. Also read the Details for listings that got worse and the unsupported claims themselves. "Invented" claims are the plan step's fault; "from photo analysis" claims are either a gap in `labels.json` (the owner fixes the labels; don't tune a prompt to match incomplete labels) or a photo-analysis mistake (look at the photo to tell which). A regression on accuracy or compliance blocks the change even if other scores improve. Model output varies, so treat a small change on one run as noise unless the details show a real pattern.
 
 6. **Record** the comparison in the commit message (prompt name, old → new version, key score changes). If the change is kept, the new report is committed with it.
 

@@ -16,6 +16,8 @@ Use these names in code, prompts, docs and UI copy (CLAUDE.md, Style).
 | **Compliance flag** | A phrase in the copy that may be discriminatory under fair-housing / human-rights rules, with a neutral alternative. Always shown before export. | `ComplianceFlag`  |
 | **Job**             | One generation run on the server, streaming progress events over SSE.                                                                            | `Job`             |
 | **Approval**        | The user's explicit OK in the UI; the only thing that unlocks export.                                                                            | —                 |
+| **Eval run**        | One `pnpm eval` over the samples: deterministic scores and judge scores per listing, saved in `evals/runs/`.                                     | `EvalRun`         |
+| **Judge**           | The model request that grades a finished carousel against the written rubric (headline quality, accuracy, brand voice). Eval only.               | `judgeCarousel`   |
 
 Spelling: Canadian English in user-facing copy ("neighbourhood", "colour").
 
