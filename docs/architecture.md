@@ -17,14 +17,15 @@ Every model output is validated against a zod schema from `@curb/shared` (ADR 00
 
 ## Packages
 
-| Package           | Role                                                                                              | May depend on                                |
-| ----------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| `@curb/shared`    | Types, zod schemas, compliance word list                                                          | — (leaf)                                     |
-| `@curb/templates` | Pure React slide components (Modern, Classic, Editorial), brand-kit tokens, render-to-HTML helper | `shared`                                     |
-| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement, `renderCarousel`                                 | `shared`, `templates`                        |
-| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface; mocks in `@curb/pipeline/testing`          | `shared` (render is injected)                |
-| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config                             | all packages, `@anthropic-ai/sdk` (Phase 1)  |
-| `@curb/web`       | React + Vite review UI                                                                            | `shared` (talks to the server over HTTP/SSE) |
+| Package           | Role                                                                                                  | May depend on                                |
+| ----------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `@curb/shared`    | Types, zod schemas, compliance word list                                                              | — (leaf)                                     |
+| `@curb/templates` | Pure React slide components (Modern, Classic, Editorial), brand-kit tokens, render-to-HTML helper     | `shared`                                     |
+| `@curb/renderer`  | Playwright HTML → PNG, DOM overflow measurement, `renderCarousel`                                     | `shared`, `templates`                        |
+| `@curb/pipeline`  | Steps 1–4 as functions over a `ModelClient` interface; mocks in `@curb/pipeline/testing`              | `shared` (render is injected)                |
+| `@curb/evals`     | Phase 3 eval logic: deterministic checks, LLM-as-judge, metrics, report (pure; runner is in `server`) | `shared`, `pipeline`                         |
+| `@curb/server`    | Fastify API, job runner, SSE progress, real `ModelClient`, env/config                                 | all packages, `@anthropic-ai/sdk` (Phase 1)  |
+| `@curb/web`       | React + Vite review UI                                                                                | `shared` (talks to the server over HTTP/SSE) |
 
 ```
 web ──HTTP/SSE──▶ server ──▶ pipeline ──▶ shared
@@ -68,13 +69,24 @@ web (React)  ── POST /api/jobs ─────────▶ JobService.cre
              ── GET export.zip ─▶ 409 unless approved
 ```
 
+## Evals (Phase 3)
+
+`pnpm eval [--listing 01 ...] [--mock] [--no-judge] [--judge-model <id>] [--no-cache]` (`apps/server/src/cli/eval.ts`, ADR 0014):
+
+1. For each sample, runs `generateCarousel` (steps 1–4) with the Modern template, then renders the final plan with every template to measure overflow.
+2. **Deterministic checks** (`scoreDeterministic`): overflow per template, schema and plan-rule problems, reused photos, compliance flags, room types against `labels.json`, critique changes.
+3. **Judge** (`judgeCarousel`, `prompts/eval-judge.v1.md`): one text-only request per listing scoring headline quality, accuracy (with every unsupported claim quoted) and brand voice, 1–5. `classifyClaims` then splits the unsupported claims into _invented_ (not in the labels or the photo analysis) and _from photo analysis_ (a label gap or an analysis mistake; a person checks the photo).
+4. Writes `evals/runs/<id>.json` and regenerates `evals/report.md`: summary vs the previous run, a row per listing, details and a trend table. Accuracy and compliance regressions are marked as blocking.
+
+`--mock` uses the sample client for both the pipeline and the judge and writes to `out/eval-mock/`; it tests the harness, not quality.
+
 ## Boundary rules (enforced)
 
 Lint rules in [`eslint.config.js`](../eslint.config.js), proven by [`tests/boundaries.test.ts`](../tests/boundaries.test.ts). Details in ADR 0005.
 
 - `templates`: no model SDK, no Node/file/network/browser modules, no `fetch`, no `process.env`, no `@curb/*` except `shared`.
 - `web`: no server, pipeline or renderer code, no model SDK, no `process.env`.
-- `pipeline`, `renderer`: no model SDK (use `ModelClient`), no `process.env`.
+- `pipeline`, `renderer`, `evals`: no model SDK (use `ModelClient`), no `process.env`.
 - `shared`: no other `@curb/*`.
 - Only `apps/server` (and the dev CLI) reads environment variables and holds API keys.
 
@@ -89,7 +101,7 @@ Lint rules in [`eslint.config.js`](../eslint.config.js), proven by [`tests/bound
 | `pnpm test:render`  | Playwright render tests in `tests/render/`: every sample × template, max-length copy, and a check that overflow is detected |
 | `pnpm test:e2e`     | Playwright end-to-end test of the review UI against the server in mock mode                                                 |
 | `pnpm check`        | All of the above, in that order; CI runs exactly this                                                                       |
-| `pnpm eval`         | Real model over `samples/` → `evals/report.md` (Phase 3, costs money)                                                       |
+| `pnpm eval`         | Real model over `samples/` → `evals/report.md` + `evals/runs/<id>.json` (costs money; `--mock` for a free harness check)    |
 
 ## Layout
 
@@ -101,6 +113,7 @@ samples/NN/         sample listings: photos, listing.json, labels.json, credits.
 tests/              repo-level tests: lint rules, render/ (Playwright)
 scripts/            small Node scripts used by package.json
 .cache/, out/       local cache and CLI output (git-ignored)
+evals/              eval report and saved runs (generated by pnpm eval; committed)
 docs/               this file, domain.md, harness-log.md, adr/
 .claude/skills/     agent skills: add-slide-type, add-template, tune-prompt
 ```
