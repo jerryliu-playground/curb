@@ -125,7 +125,7 @@ export default defineConfig(
     },
   },
   {
-    files: ["packages/pipeline/src/**", "packages/renderer/src/**"],
+    files: ["packages/pipeline/src/**", "packages/renderer/src/**", "packages/evals/src/**"],
     rules: {
       "no-restricted-imports": ["error", { patterns: [MODEL_SDK] }],
       "no-restricted-properties": ["error", NO_PROCESS_ENV],

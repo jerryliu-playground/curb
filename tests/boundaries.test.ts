@@ -66,6 +66,20 @@ const violations = [
     mentions: "ModelClient",
   },
   {
+    name: "evals import the model SDK directly",
+    file: "packages/evals/src/probe.ts",
+    code: 'import Anthropic from "@anthropic-ai/sdk";\nexport const a = Anthropic;\n',
+    rule: "no-restricted-imports",
+    mentions: "ModelClient",
+  },
+  {
+    name: "evals read process.env",
+    file: "packages/evals/src/probe.ts",
+    code: "export const key = process.env.ANTHROPIC_API_KEY;\n",
+    rule: "no-restricted-properties",
+    mentions: "rule 4",
+  },
+  {
     name: "a package reads process.env",
     file: "packages/pipeline/src/probe.ts",
     code: "export const key = process.env.ANTHROPIC_API_KEY;\n",
