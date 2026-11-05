@@ -1,7 +1,13 @@
 import type { z } from "zod";
 
 export type PipelineStep =
-  "photo-analysis" | "carousel-plan" | "critique" | "compliance" | "slide-regenerate";
+  | "photo-analysis"
+  | "carousel-plan"
+  | "critique"
+  | "compliance"
+  | "slide-regenerate"
+  /** Grades a finished carousel in `pnpm eval` (@curb/evals); not part of the product pipeline. */
+  | "eval-judge";
 export type Effort = "low" | "medium" | "high";
 
 export interface ModelImage {

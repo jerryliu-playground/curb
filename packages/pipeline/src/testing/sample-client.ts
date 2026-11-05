@@ -239,6 +239,13 @@ export function createSampleModelClient(sample: {
           return reply({ summary: "No changes needed.", fixes: [] });
         case "slide-regenerate":
           return reply(regenerated(request.meta?.slide));
+        // The stand-in plan only uses labels and listing facts, so a stand-in judge finds nothing.
+        case "eval-judge":
+          return reply({
+            headlineQuality: { score: 5, reason: "Mock judge: not graded." },
+            accuracy: { score: 5, reason: "Mock judge: not graded.", unsupportedClaims: [] },
+            brandVoice: { score: 5, reason: "Mock judge: not graded." },
+          });
       }
     },
   };
